@@ -391,5 +391,19 @@ public static void main(String[] args)
     list3.search(30);
     System.out.println("list3 after search 30 from list :");
     System.out.println("30");
+    list<Integer> list4 = new list<>();
+    // Adding elements to the above List object
+       // Element 1 - 30
+       list4.add(30);
+       // Element 2 - 40
+       list4.add(40);
+       // Element 3 - 56
+       list4.add(56);
+       // Element 4 - 70
+       list4.add(70);
+       // Display sorted only
+       System.out.println("list3 after adding 30,40,56 and 70 :");
+       // Print and display the above List elements
+       System.out.println(list4);
 	}
 }
