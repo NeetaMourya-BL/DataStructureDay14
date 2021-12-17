@@ -356,6 +356,13 @@ public static void main(String[] args)
     // now print the updated List again
     // after inserting element at second position
     System.out.println(list2);
+    // Now, adding element 2- "30" at position 2
+    list2.add(3, "40");
+    // Display message only
+    System.out.println("list2 after adding 40 at position 3 :");
+    // now print the updated List again
+    // after inserting element at second position
+    System.out.println(list2);
     // Removing last element from list1
     list<Integer> list3 = new list<>();
  // Adding elements to the above List object
