@@ -66,6 +66,56 @@ void add(T data)
   // Increasing length after adding new node
   length++;
 }
+//Method
+// To add new node at any given position
+void add(int position, T data)
+{
+
+  // Checking if position is valid
+  if (position > length + 1) {
+
+      // Display message only
+      System.out.println(
+          "Position Unavailable in LikedList");
+      return;
+  }
+
+  // If new position is head then replace head node
+  if (position == 1) {
+
+      // Temporary node that stores previous head
+      // value
+      Node<T> temp = head;
+
+      // New valued node stored in head
+      head = new Node<T>(data);
+
+      // New head node pointing to old head node
+      head.next = temp;
+
+      return;
+  }
+
+  // Temporary node for traversal
+  Node<T> temp = head;
+
+  // Dummy node with null value that stores previous
+  // node
+  Node<T> prev = new Node<T>(null);
+  // iterating to the given position
+  while (position - 1 > 0) {
+      // assigning previous node
+      prev = temp;
+      // incrementing next node
+      temp = temp.next;
+      // decreasing position counter
+      position--;
+  }
+  // previous node now points to new value
+  prev.next = new Node<T>(data);
+  // new value now points to former current node
+  prev.next.next = temp;
+}
 }
 //Main Class
 public class LinkedList {
