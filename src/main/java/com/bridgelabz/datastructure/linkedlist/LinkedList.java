@@ -357,40 +357,36 @@ public static void main(String[] args)
     // after inserting element at second position
     System.out.println(list2);
     // Now, adding element 2- "30" at position 2
-    list2.add(3, "40");
-    // Display message only
-    System.out.println("list2 after adding 40 at position 3 :");
-    // now print the updated List again
-    // after inserting element at second position
-    System.out.println(list2);
-    // Removing last element from list1
     list<Integer> list3 = new list<>();
  // Adding elements to the above List object
     // Element 1 - 56
     list3.add(56);
     // Element 2 - 30
     list3.add(30);
-    // Element 3 - 70
+    // Element 3 - 40
+    list3.add(70);
+    // Element 4 - 70
     list3.add(70);
     // Display message only
     System.out.println("list3 after adding 56,30 and 70 :");
     // Print and display the above List elements
-    System.out.println(list1);
+    System.out.println(list3);
     list3.remove(70);
     // Display message only
     System.out.println("list3 after removing last element 70 :");
-
     // Print and display again updated List elements
     System.out.println(list3);
-    
     // Removing first element from list1
     list3.remove(56);
-
     // Display message only
     System.out.println("list3 after removing first element 56 :");
-
     // Print and display again updated List elements
     System.out.println(list3);
+    list3.remove(40);
+    // Display message only
+    System.out.println("list2 after removing third element 40 :");
+    // Print and display again updated List elements
+    System.out.println(list2);    
     // search from list
     list3.search(30);
     System.out.println("list3 after search 30 from list :");
