@@ -23,6 +23,8 @@ public class StackAndQueue {
 	{  
 	System.out.println("empty stack");  
 	}  
+	StackAndQueue queue=new StackAndQueue();
+	queue.peek();
 	}  
 	//performing push operation  
 	static void add(Stack stk, int x)   
@@ -43,4 +45,16 @@ public class StackAndQueue {
 	//prints modified stack  
 	System.out.println("stack: " + stk);  
 	}  
+	public void peek() {
+	Stack<String> stk= new Stack<>();  
+	// pushing elements into Stack  
+	stk.push("56");  
+	stk.push("30");  
+	stk.push("72");  
+	System.out.println("Stack: " + stk);  
+	// Access element from the top of the stack  
+	String fruits = stk.peek();  
+	//prints stack  
+	System.out.println("Element at top: " + fruits);  
+	}
 	}  
