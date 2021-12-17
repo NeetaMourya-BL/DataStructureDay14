@@ -251,6 +251,14 @@ public static void main(String[] args)
     // now print the updated List again
     // after inserting element at second position
     System.out.println(list2);
+    // Removing last element from list1
+    list1.remove(70);
+
+    // Display message only
+    System.out.println("list2 after removing 30 :");
+
+    // Print and display again updated List elements
+    System.out.println(list2);
     // Removing first element from list1
     list1.remove(56);
 
