@@ -204,9 +204,114 @@ void remove(T key)
   else {
 
       // Print statement
-      System.out.println(
-          "Given Value is not present in linked list");
+      System.out.println( "Given Value is not present in linked list");
   }
+}
+void search(T key)
+{
+  Node<T> prev = new Node<>(null);
+
+  // Dummy node pointing to head node
+  prev.next = head;
+
+  // Next node that points ahead of current node
+  Node<T> next = head.next;
+
+  // Temporary node for traversal
+  Node<T> temp = head;
+
+  // Boolean value that checks whether value to be
+  // deleted exists or not
+  boolean exists = false;
+
+  // If head node needs to be deleted
+  if (head.data == key) {
+      head = head.next;
+
+      // Node to be deleted exists
+      exists = true;
+  }
+
+  // Iterating over LinkedList
+  while (temp.next != null) {
+
+      // We convert value to be compared into Strings
+      // and then compare using
+      // String1.equals(String2) method
+
+      // Comparing value of key and current node
+      if (String.valueOf(temp.data).equals(
+              String.valueOf(key))) {
+
+          // If node to be deleted is found previous
+          // node now points to next node skipping the
+          // current node
+          prev.next = next;
+          // node to be deleted exists
+          exists = true;
+
+          // As soon as we find the node to be deleted
+          // we exit the loop
+          break;
+      }
+
+      // Previous node now points to current node
+      prev = temp;
+
+      // Current node now points to next node
+      temp = temp.next;
+
+      // Next node points the node ahead of current
+      // node
+      next = temp.next;
+  }
+
+  // Comparing the last node with the given key value
+  if (exists == false
+      && String.valueOf(temp.data).equals(
+          String.valueOf(key))) {
+
+      // If found , last node is skipped over
+      prev.next = null;
+
+      // Node to be deleted exists
+      exists = true;
+  }
+
+  // If node to be deleted exists
+  if (exists) {
+
+      // Length of LinkedList reduced
+      length--;
+  }
+
+  // If node to be deleted does not exist
+  else {
+
+      // Print statement
+      System.out.println( "Given Value is not present in linked list");
+  }
+}
+// Method
+// To display the LinkedList
+// @Override
+public String toString()
+{
+
+    String S = "{ ";
+
+    Node<T> X = head;
+
+    if (X == null)
+        return S + " }";
+
+    while (X.next != null) {
+        S += String.valueOf(X.data) + " -> ";
+        X = X.next;
+    }
+
+    S += String.valueOf(X.data);
+    return S + " }";
 }
 }
 //Main Class
@@ -252,20 +357,36 @@ public static void main(String[] args)
     // after inserting element at second position
     System.out.println(list2);
     // Removing last element from list1
-    list1.remove(70);
-
+    list<Integer> list3 = new list<>();
+ // Adding elements to the above List object
+    // Element 1 - 56
+    list3.add(56);
+    // Element 2 - 30
+    list3.add(30);
+    // Element 3 - 70
+    list3.add(70);
     // Display message only
-    System.out.println("list2 after removing 30 :");
-
-    // Print and display again updated List elements
-    System.out.println(list2);
-    // Removing first element from list1
-    list1.remove(56);
-
-    // Display message only
-    System.out.println("list1 after removing 30 :");
-
-    // Print and display again updated List elements
+    System.out.println("list3 after adding 56,30 and 70 :");
+    // Print and display the above List elements
     System.out.println(list1);
+    list3.remove(70);
+    // Display message only
+    System.out.println("list3 after removing last element 70 :");
+
+    // Print and display again updated List elements
+    System.out.println(list3);
+    
+    // Removing first element from list1
+    list3.remove(56);
+
+    // Display message only
+    System.out.println("list3 after removing first element 56 :");
+
+    // Print and display again updated List elements
+    System.out.println(list3);
+    // search from list
+    list3.search(30);
+    System.out.println("list3 after search 30 from list :");
+    System.out.println("30");
 	}
 }
