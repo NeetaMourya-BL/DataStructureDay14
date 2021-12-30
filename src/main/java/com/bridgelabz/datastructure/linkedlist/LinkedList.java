@@ -69,8 +69,7 @@ void add(int position, T data)
   if (position > length + 1) {
 
       // Display message only
-      System.out.println(
-          "Position Unavailable in LikedList");
+      System.out.println("Position Unavailable in LikedList");
       return;
   }
 
