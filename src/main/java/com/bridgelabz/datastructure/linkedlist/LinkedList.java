@@ -113,7 +113,6 @@ void add(int position, T data)
 // To remove a node from list
 void remove(T key)
 {
-
   //  NOTE
   // dummy node is used to represent the node before
   // the current node Since in a Singly Linked-List we
